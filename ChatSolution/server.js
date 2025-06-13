@@ -19,10 +19,6 @@ io.on('connection', socket => {
     io.emit('chat message', msg); // Broadcast to everyone
   });
 
-  socket.on('chat image', (data) => {
-    io.emit('chat image', data);
-  });
-
   socket.on('disconnect', () => {
     console.log(' User disconnected');
   });
@@ -30,7 +26,6 @@ io.on('connection', socket => {
 
 // Start server
 const PORT = 3000;
-const HOST = "0.0.0.0";
-server.listen(PORT, HOST, () => {
-  console.log(` Server running on http://${HOST}:${PORT}`);
+server.listen(PORT, () => {
+  console.log(` Server running on http://localhost:${PORT}`);
 });
